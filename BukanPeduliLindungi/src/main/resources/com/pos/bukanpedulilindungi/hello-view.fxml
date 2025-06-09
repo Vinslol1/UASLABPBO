@@ -13,12 +13,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pos.bukanpedulilindungi.HelloController">
   <children>
     <AnchorPane prefHeight="200.0" prefWidth="200.0">
       <children>
-        <AnchorPane fx:id="login_form" layoutX="7.0" layoutY="134.0" prefHeight="500.0" prefWidth="350.4" styleClass="white-bg" stylesheets="@design/PageDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane fx:id="login_form" layoutX="7.0" layoutY="134.0" prefHeight="500.0" prefWidth="350.4" styleClass="white-bg" stylesheets="@design/PageDesign.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
           <children>
             <FontAwesomeIcon fill="ROYALBLUE" glyphName="USER" layoutX="151.0" layoutY="76.0" size="5em" text="" />
             <Label layoutX="119.0" layoutY="85.0" text="Login Account" textFill="ROYALBLUE">
@@ -63,7 +62,7 @@
             <Hyperlink fx:id="login_registerHere" layoutX="207.0" layoutY="451.0" onAction="#switchForm" text="Register" />
           </children>
         </AnchorPane>
-        <AnchorPane fx:id="register_form" layoutX="10.0" layoutY="10.0" prefHeight="500.0" prefWidth="350.4" styleClass="white-bg" stylesheets="@design/PageDesign.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane fx:id="register_form" layoutX="10.0" layoutY="10.0" prefHeight="500.0" prefWidth="350.4" styleClass="white-bg" stylesheets="@design/PageDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
           <children>
             <Label layoutX="108.0" layoutY="84.0" text="Register Account" textFill="ROYALBLUE">
               <font>
@@ -96,7 +95,7 @@
               </styleClass>
             </PasswordField>
             <CheckBox fx:id="register_checkBox" layoutX="49.0" layoutY="254.0" mnemonicParsing="false" text="Show Password" />
-            <Button fx:id="register_signupBtn" layoutX="49.0" layoutY="284.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="250.0" stylesheets="@design/PageDesign.css" text="Sign Up">
+            <Button fx:id="register_signupBtn" layoutX="49.0" layoutY="284.0" mnemonicParsing="false" onAction="#registerAccount" prefHeight="42.0" prefWidth="250.0" stylesheets="@design/PageDesign.css" text="Sign Up">
               <styleClass>
                 <String fx:value="btn-1" />
                 <String fx:value="radius" />

@@ -1,6 +1,5 @@
 package com.pos.bukanpedulilindungi;
 
-import com.sun.jdi.connect.spi.Connection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,8 +7,10 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class HelloController implements Initializable {
@@ -67,6 +68,8 @@ public class HelloController implements Initializable {
     private PreparedStatement prepare;
     private ResultSet result;
 
+    private AlertMessage alert = new AlertMessage();
+
     public void registerAccount() {
 
         if (register_email.getText().isEmpty()
@@ -117,11 +120,11 @@ public class HelloController implements Initializable {
                     prepare.executeUpdate();
 
                     alert.successMessage("Registered Successfully!");
-                    registerClear();
-
-                    // TO SWITCH THE FORM INTO LOGIN FORM
-                    login_form.setVisible(true);
-                    register_form.setVisible(false);
+//                    registerClear();
+//
+//                    // TO SWITCH THE FORM INTO LOGIN FORM
+//                    login_form.setVisible(true);
+//                    register_form.setVisible(false);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
