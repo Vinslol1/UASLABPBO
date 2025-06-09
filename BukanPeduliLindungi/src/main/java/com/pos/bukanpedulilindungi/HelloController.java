@@ -1,16 +1,24 @@
 package com.pos.bukanpedulilindungi;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class HelloController implements Initializable {
@@ -233,6 +241,85 @@ public class HelloController implements Initializable {
 
     }
 
+
+    public void userList() {
+
+        List<String> listU = new ArrayList<>();
+
+        for (String data : Users.user) {
+            listU.add(data);
+        }
+
+        ObservableList listData = FXCollections.observableList(listU);
+        login_user.setItems(listData);
+    }
+
+
+    public void switchPage() {
+
+        if (login_user.getSelectionModel().getSelectedItem() == "Admin Portal") {
+
+            try {
+
+                Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+                Stage stage = new Stage();
+
+                stage.setTitle("Hospital Management System");
+
+                stage.setMinWidth(340);
+                stage.setMinHeight(580);
+
+                stage.setScene(new Scene(root));
+                stage.show();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else if (login_user.getSelectionModel().getSelectedItem() == "Doctor Portal") {
+
+            try {
+
+                Parent root = FXMLLoader.load(getClass().getResource("DoctorPage.fxml"));
+                Stage stage = new Stage();
+
+                stage.setTitle("Hospital Management System");
+
+                stage.setMinWidth(340);
+                stage.setMinHeight(580);
+
+                stage.setScene(new Scene(root));
+                stage.show();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else if (login_user.getSelectionModel().getSelectedItem() == "Patient Portal") {
+
+            try {
+
+                Parent root = FXMLLoader.load(getClass().getResource("PatientPage.fxml"));
+                Stage stage = new Stage();
+
+                stage.setTitle("Hospital Management System");
+
+                stage.setMinWidth(340);
+                stage.setMinHeight(580);
+
+                stage.setScene(new Scene(root));
+                stage.show();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        login_user.getScene().getWindow().hide();
+
+    }
+
 // Tombol Pindah Dari login ke register atau sebaliknya dari Link paling bawah
     public void switchForm(ActionEvent event){
         if(event.getSource() == login_registerHere) {
@@ -248,6 +335,6 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        userList();
     }
 }

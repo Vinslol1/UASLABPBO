@@ -52,7 +52,7 @@
               </styleClass>
             </Button>
             <FontAwesomeIcon fill="ROYALBLUE" glyphName="HOSPITAL_ALT" layoutX="147.0" layoutY="378.0" size="6em" />
-            <ComboBox fx:id="login_user" layoutX="115.0" layoutY="407.0" prefHeight="30.0" prefWidth="120.0" promptText="Select User" stylesheets="@design/PageDesign.css">
+            <ComboBox fx:id="login_user" layoutX="115.0" layoutY="407.0" onAction="#switchPage" prefHeight="30.0" prefWidth="120.0" promptText="Select User" stylesheets="@design/PageDesign.css">
               <styleClass>
                 <String fx:value="textfield-1" />
                 <String fx:value="white-bg" />
