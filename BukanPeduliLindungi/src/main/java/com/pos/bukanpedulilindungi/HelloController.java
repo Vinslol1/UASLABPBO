@@ -106,33 +106,29 @@ public class HelloController implements Initializable {
                 prepare.setString(2, login_password.getText());
                 result = prepare.executeQuery();
 
+
                 if (result.next()) {
-                    alert.successMessage("Login Successfully");
-                } else {
-                    alert.errorMessage("Incorrect Username/Password");
-                }
-//                if (result.next()) {
-//                    // TO GET THE USERNAME
+                    // TO GET THE USERNAME
 //                    Data.admin_username = login_username.getText();
 //                    Data.admin_id = Integer.parseInt(result.getString("admin_id"));
-//
-//                    // IF CORRECT USERNAME AND PASSWORD
-//                    alert.successMessage("Login Successfully!");
-//
-//                    // LINK MAIN FORM FOR ADMIN
-//                    Parent root = FXMLLoader.load(getClass().getResource("AdminMainForm.fxml"));
-//                    Stage stage = new Stage();
-//
-//                    stage.setTitle("Hospital Management System | Admin Portal");
-//                    stage.setScene(new Scene(root));
-//                    stage.show();
-//
-//                    // TO HIDE YOUR ADMIN PAGE (LOGIN FORM)
-//                    login_loginBtn.getScene().getWindow().hide();
-//                } else {
-//                    // IF WRONG USERNAME OR PASSWORD
-//                    alert.errorMessage("Incorrect Username/Password");
-//                }
+
+                    // IF CORRECT USERNAME AND PASSWORD
+                    alert.successMessage("Login Successfully!");
+
+                    // LINK MAIN FORM FOR ADMIN
+                    Parent root = FXMLLoader.load(getClass().getResource("AdminMainForm.fxml"));
+                    Stage stage = new Stage();
+
+                    stage.setTitle("Hospital Management System | Admin Portal");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+
+                    // TO HIDE YOUR ADMIN PAGE (LOGIN FORM)
+                    login_logInBtn.getScene().getWindow().hide();
+                } else {
+                    // IF WRONG USERNAME OR PASSWORD
+                    alert.errorMessage("Incorrect Username/Password");
+                }
 
             } catch (Exception e) {
                 e.printStackTrace();

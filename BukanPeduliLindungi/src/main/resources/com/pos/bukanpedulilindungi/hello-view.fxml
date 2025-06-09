@@ -45,7 +45,7 @@
               </styleClass>
             </TextField>
             <CheckBox fx:id="login_checkBox" layoutX="50.0" layoutY="213.0" mnemonicParsing="false" onAction="#loginShowPassword" text="Show Password" />
-            <Button fx:id="login_loginBtn" layoutX="50.0" layoutY="243.0" mnemonicParsing="false" onAction="#loginAccount" prefHeight="42.0" prefWidth="250.0" stylesheets="@design/PageDesign.css" text="Login">
+            <Button fx:id="login_logInBtn" layoutX="50.0" layoutY="243.0" mnemonicParsing="false" onAction="#loginAccount" prefHeight="42.0" prefWidth="250.0" stylesheets="@design/PageDesign.css" text="Login">
               <styleClass>
                 <String fx:value="btn-1" />
                 <String fx:value="radius" />
