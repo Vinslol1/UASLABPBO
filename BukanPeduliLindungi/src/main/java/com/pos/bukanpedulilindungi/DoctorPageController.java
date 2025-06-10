@@ -86,7 +86,6 @@ public class DoctorPageController implements Initializable {
     private ResultSet result;
 
     private final AlertMessage alert = new AlertMessage();
-
     @FXML
     void loginAccount() {
 
@@ -129,31 +128,26 @@ public class DoctorPageController implements Initializable {
                     result = prepare.executeQuery();
 
                     if (result.next()) {
-                        alert.successMessage("Login Successfully");
+
+                        Data.doctor_id = result.getString("doctor_id");
+                        Data.doctor_name = result.getString("full_name");
+
+                        alert.successMessage("Login Successfully!");
+
+                        // LINK YOUR DOCTOR MAIN FORM
+                        Parent root = FXMLLoader.load(getClass().getResource("DoctorMainForm.fxml"));
+                        Stage stage = new Stage();
+
+                        stage.setTitle("Hospital Management System | Doctor Main Form");
+                        stage.setScene(new Scene(root));
+                        stage.show();
+
+                        // TO HIDE YOUR DOCTOR PAGE
+                        login_loginBtn.getScene().getWindow().hide();
+
                     } else {
-                        alert.errorMessage("Incorrect Username/Password");
+                        alert.errorMessage("Incorrect Doctor ID/Password");
                     }
-//                    if (result.next()) {
-//
-//                        Data.doctor_id = result.getString("doctor_id");
-//                        Data.doctor_name = result.getString("full_name");
-//
-//                        alert.successMessage("Login Successfully!");
-//
-//                        // LINK YOUR DOCTOR MAIN FORM
-//                        Parent root = FXMLLoader.load(getClass().getResource("DoctorMainForm.fxml"));
-//                        Stage stage = new Stage();
-//
-//                        stage.setTitle("Hospital Management System | Doctor Main Form");
-//                        stage.setScene(new Scene(root));
-//                        stage.show();
-//
-//                        // TO HIDE YOUR DOCTOR PAGE
-//                        login_loginBtn.getScene().getWindow().hide();
-//
-//                    } else {
-//                        alert.errorMessage("Incorrect Doctor ID/Password");
-//                    }
                 }
 
             } catch (Exception e) {

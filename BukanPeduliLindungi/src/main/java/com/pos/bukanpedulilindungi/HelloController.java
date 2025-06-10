@@ -109,8 +109,8 @@ public class HelloController implements Initializable {
 
                 if (result.next()) {
                     // TO GET THE USERNAME
-//                    Data.admin_username = login_username.getText();
-//                    Data.admin_id = Integer.parseInt(result.getString("admin_id"));
+                    Data.admin_username = login_username.getText();
+                    Data.admin_id = Integer.parseInt(result.getString("admin_id"));
 
                     // IF CORRECT USERNAME AND PASSWORD
                     alert.successMessage("Login Successfully!");

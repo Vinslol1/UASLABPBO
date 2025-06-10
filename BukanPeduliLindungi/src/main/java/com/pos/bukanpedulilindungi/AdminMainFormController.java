@@ -1,6 +1,7 @@
 package com.pos.bukanpedulilindungi;
 
 
+import com.mysql.jdbc.Statement;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,9 +19,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
+
+
+
 
 public class AdminMainFormController implements Initializable {
 
@@ -285,6 +292,12 @@ public class AdminMainFormController implements Initializable {
     @FXML
     private Label top_username;
 
+    //    DATABASE TOOLS
+    private Connection connect;
+    private PreparedStatement prepare;
+    private Statement statement;
+    private ResultSet result;
+
     @FXML
     void logoutBtn(ActionEvent event) {
 
@@ -362,6 +375,32 @@ public class AdminMainFormController implements Initializable {
         }
     }
 
+    public void displayAdminIDUsername() {
+
+        String sql = "SELECT * FROM admin WHERE username = '"
+                + Data.admin_username + "'";
+
+        connect = Database.connectDB();
+
+        try {
+
+            prepare = connect.prepareStatement(sql);
+            result = prepare.executeQuery();
+
+            if (result.next()) {
+                nav_adminID.setText(result.getString("admin_id"));
+                String tempUsername = result.getString("username");
+                tempUsername = tempUsername.substring(0, 1).toUpperCase() + tempUsername.substring(1); // TO SET THE FIRST LETTER TO UPPER CASE
+                nav_username.setText(tempUsername);
+                top_username.setText(tempUsername);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
     public void runTime() {
 
@@ -390,5 +429,6 @@ public class AdminMainFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         runTime();
+        displayAdminIDUsername();
     }
 }
