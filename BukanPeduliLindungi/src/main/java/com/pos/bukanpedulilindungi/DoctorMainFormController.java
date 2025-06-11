@@ -995,7 +995,7 @@ public class DoctorMainFormController implements Initializable {
                     prepare.setString(9, String.valueOf(sqlDate));
 
                     prepare.executeUpdate();
-
+                    profileDisplayImages();
                     alert.successMessage("Updated Successfully!");
                 } catch (Exception e) {
                     e.printStackTrace();

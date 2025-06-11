@@ -1,6 +1,5 @@
 package com.pos.bukanpedulilindungi;
 
-
 import java.sql.Date;
 
 public class PatientsData {
@@ -84,6 +83,14 @@ public class PatientsData {
         this.diagnosis = diagnosis;
         this.treatment = treatment;
         this.date = date;
+    }
+
+    public String getDiagnosis(){
+        return diagnosis;
+    }
+
+    public String getDescription(){
+        return description;
     }
 
     public Integer getId(){

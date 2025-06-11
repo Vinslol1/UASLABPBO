@@ -5,7 +5,7 @@ module com.pos.bukanpedulilindungi {
     requires jdk.jdi;
     requires java.desktop;
     requires mysql.connector.java;
-
+    requires javafx.base;
 
     opens com.pos.bukanpedulilindungi to javafx.fxml;
     exports com.pos.bukanpedulilindungi;
