@@ -106,28 +106,22 @@ public class PatientPageController implements Initializable {
 
                     result = prepare.executeQuery();
 
-
                     if (result.next()) {
-                        alert.successMessage("Login Successfully");
+                        Data.patient_id = Integer.parseInt(login_patientID.getText());
+
+                        alert.successMessage("Login Successfully!");
+                        // LINK YOUR PATIENT MAIN FORM
+                        Parent root = FXMLLoader.load(getClass().getResource("PatientMainForm.fxml"));
+                        Stage stage = new Stage();
+
+                        stage.setScene(new Scene(root));
+                        stage.show();
+
+                        // TO HIDE YOUR LOGIN FORM
+                        login_loginBtn.getScene().getWindow().hide();
                     } else {
-                        alert.errorMessage("Incorrect Username/Password");
+                        alert.errorMessage("Incorrect Patient ID/Password");
                     }
-//                    if (result.next()) {
-//                        Data.patient_id = Integer.parseInt(login_patientID.getText());
-//
-//                        alert.successMessage("Login Successfully!");
-//                        // LINK YOUR PATIENT MAIN FORM
-//                        Parent root = FXMLLoader.load(getClass().getResource("PatientMainForm.fxml"));
-//                        Stage stage = new Stage();
-//
-//                        stage.setScene(new Scene(root));
-//                        stage.show();
-//
-//                        // TO HIDE YOUR LOGIN FORM
-//                        login_loginBtn.getScene().getWindow().hide();
-//                    } else {
-//                        alert.errorMessage("Incorrect Patient ID/Password");
-//                    }
                 }
 
             } catch (Exception e) {

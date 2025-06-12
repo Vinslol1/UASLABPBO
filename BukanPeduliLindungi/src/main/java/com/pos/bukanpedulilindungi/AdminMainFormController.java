@@ -1330,7 +1330,7 @@ public class AdminMainFormController implements Initializable {
 
         try {
             if (alert.confirmationMessage("Are you sure you want to logout?")) {
-                Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
                 Stage stage = new Stage();
 
                 stage.setScene(new Scene(root));
