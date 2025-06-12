@@ -321,7 +321,7 @@ public class PatientMainFormController implements Initializable {
         home_appointment_col_description.setCellValueFactory(new PropertyValueFactory<>("description"));
         home_appointment_col_diagnosis.setCellValueFactory(new PropertyValueFactory<>("diagnosis"));
         home_appointment_col_treatment.setCellValueFactory(new PropertyValueFactory<>("treatment"));
-        home_appointment_col_doctor.setCellValueFactory(new PropertyValueFactory<>("doctor"));
+        home_appointment_col_doctor.setCellValueFactory(new PropertyValueFactory<>("doctorID"));
         home_appointment_col_schedule.setCellValueFactory(new PropertyValueFactory<>("schedule"));
 
         home_appointment_tableView.setItems(homeAppointmentListData);

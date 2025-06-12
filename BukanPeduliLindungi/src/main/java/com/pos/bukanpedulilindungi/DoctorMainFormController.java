@@ -713,9 +713,17 @@ public class DoctorMainFormController implements Initializable {
                     + appointment_description.getText() + "', address = '"
                     + appointment_address.getText() + "', status = '"
                     + appointment_status.getSelectionModel().getSelectedItem() + "', schedule = '"
-                    + appointment_schedule.getValue() + "', date_modify = '"
+                    + appointment_schedule.getValue() + "', diagnosis = '"
+                    + appointment_diagnosis.getText() + "', treatment = '"
+                    + appointment_treatment.getText() + "', date_modify = '"
                     + sqlDate + "' WHERE appointment_id = '"
-                    + appointment_appointmentID.getText() + "'";
+                    + appointment_appointmentID.getText() + "'; ";
+
+
+            String updatePatient =
+                    "UPDATE patient SET diagnosis = '" + appointment_diagnosis.getText()
+                            + "', treatment = '" + appointment_treatment.getText()
+                            + "' WHERE full_name = '" + appointment_name.getText() + "'";
 
             connect = Database.connectDB();
 
@@ -723,6 +731,8 @@ public class DoctorMainFormController implements Initializable {
                 if (alert.confirmationMessage("Are you sure you want to UPDATE Appointment ID: "
                         + appointment_appointmentID.getText() + "?")) {
                     prepare = connect.prepareStatement(updateData);
+                    prepare = connect.prepareStatement(updatePatient);
+
                     prepare.executeUpdate();
 
                     appointmentShowData();
