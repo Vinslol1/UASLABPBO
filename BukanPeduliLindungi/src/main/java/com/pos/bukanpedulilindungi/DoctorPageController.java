@@ -227,6 +227,10 @@ public class DoctorPageController implements Initializable {
                     prepare.executeUpdate();
 
                     alert.successMessage("Registered Succesfully!");
+                    registerClear();
+                    // UNTUK MENGGANTI FORM MENJADI LOGIN FORM
+                    login_form.setVisible(true);
+                    register_form.setVisible(false);
 
                 }
 
@@ -251,6 +255,16 @@ public class DoctorPageController implements Initializable {
             register_password.setVisible(true);
         }
 
+    }
+
+    // INI SIH FUNCTION YANG AKAN CLEAR FORM REGISTER SIAP DIGUNAKAN
+    public void registerClear() {
+        register_email.clear();
+        register_fullName.clear();
+        register_doctorID.clear();
+        register_password.clear();
+        register_showPassword.clear();
+        login_doctorID.clear();
     }
 
     public void registerDoctorID() {

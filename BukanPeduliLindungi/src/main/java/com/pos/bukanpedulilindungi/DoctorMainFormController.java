@@ -730,19 +730,22 @@ public class DoctorMainFormController implements Initializable {
             try {
                 if (alert.confirmationMessage("Are you sure you want to UPDATE Appointment ID: "
                         + appointment_appointmentID.getText() + "?")) {
-                    prepare = connect.prepareStatement(updateData);
-                    prepare = connect.prepareStatement(updatePatient);
 
-                    prepare.executeUpdate();
+                    PreparedStatement updateAppointmentStmt = connect.prepareStatement(updateData);
+                    PreparedStatement updatePatientStmt = connect.prepareStatement(updatePatient);
+
+                    updateAppointmentStmt.executeUpdate(); // ✅ update appointment table
+                    updatePatientStmt.executeUpdate();     // ✅ update patient table
 
                     appointmentShowData();
                     appointmentAppointmentID();
                     appointmentClearBtn();
-                    alert.successMessage("Successully Updated!");
+                    alert.successMessage("Successfully Updated!");
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
         }
     }
 
