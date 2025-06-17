@@ -40,11 +40,6 @@ Fitur Utama
 6. Payment
     Sistem pembayaran yang memudahkan proses administrasi keuangan.
 
-Role      | Fitur Utama
-Admin     | Manajemen status/profil, edit appointment, kelola pembayaran
-Dokter	  | Kelola pasien, buat/edit appointment, input hasil diagnosis dan treatment
-Pasien	  | Lihat daftar dokter, booking appointment
-
 Cara Menjalankan Aplikasi = 
 1. Clone Github di IntellIJ IDEA
 2. Buat project structure baru ke folder library yang  ("\src\main\resources\com\pos\bukanpedulilindungi\lib")
