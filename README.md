@@ -1,31 +1,49 @@
 Projek BukanPeduliLindungi
+Tim ubulubul
 - Patrick Nathan Wangsa (231401071)
 - M. Kevin Gibran Lubis (231401065)
 - Steven W. Girsang (231401059)
 - Fadjar Maulana Ikhsan (231401092)
 - Luthfiah Amanda Putri (231401125)
 
-Link Youtube : 
+Deskripsi Proyek
+BukanPeduliLindungi adalah aplikasi yang dikembangkan sebagai platform untuk memfasilitasi komunikasi antara pasien dan dokter serta mempermudah proses administrasi rumah sakit oleh admin. Platform ini bertujuan untuk meningkatkan efisiensi layanan kesehatan dengan menyediakan sistem terintegrasi bagi seluruh pihak terkait.
 
-Aplikasi ini akan dikembangkan sebagai platform yang memfasilitasi komunikasi antara pasien dan dokter serta mempermudah proses administrasi rumah sakit oleh admin.
-Aplikasi ini terdiri atas:
-1. Admin : 
-- Role yang bisa mengatur status dan profile dari pasien dan dokter
-- Edit Appointment
-- Membuat Payment 
-2. Dokter :
-- Role yang mengatur dalam pembuatan pasien (status dari pasien ditentukan admin)
-- Membuat dan mengedit Appointment dan hasil dari appointment tersebut (dalam treatment dan diagnosis)
-3. Pasien :
-- Melihat list list dokter yang ada
-- Booking Appointment
-4. Register/Login : Register & Login Account
-   
-Fitur fitur aplikasi =
-- Appointment Scheduling = Pasien & Dokter bisa menentukan appointment dan hasilnya
-- Pending Account Approval = Dokter & Pasien ketika account nya harus menunggu presetujuan admin baru bisa dilogin
-- Dashboard = Di halaman utama admin, pasien, dan dokter terdapat dashboard yang memberitahu informasi yang sesuai
-- Payment = Pembayaran yang disesuaikan dari appointment
+Link YouTube
+
+Fitur Utama
+1. Manajemen Pengguna Berdasarkan Role
+- Admin
+    Mengelola status dan profil pasien serta dokter.
+    Mengedit dan mengatur jadwal appointment.
+    Membuat dan mengelola pembayaran.
+- Dokter
+    Mengelola data pasien (status pasien ditentukan oleh admin).
+    Membuat dan mengedit appointment, termasuk hasil diagnosis dan treatment.
+- Pasien
+    Melihat daftar dokter yang tersedia.
+    Melakukan booking appointment dengan dokter pilihan.
+
+2. Register dan Login Akun
+- Setiap pengguna dapat melakukan registrasi dan login ke dalam sistem.
+- Akun dokter dan pasien memerlukan persetujuan admin sebelum dapat digunakan.
+
+3. Appointment Scheduling
+    Pasien dan dokter dapat menentukan jadwal appointment serta mengatur hasil konsultasi.
+
+4. Pending Account Approval
+    Akun dokter dan pasien harus melalui proses persetujuan admin sebelum dapat mengakses aplikasi.
+
+5. Dashboard
+    Tersedia dashboard khusus untuk admin, dokter, dan pasien yang menampilkan informasi sesuai peran masing-masing.
+
+6. Payment
+    Sistem pembayaran yang memudahkan proses administrasi keuangan.
+
+Role      | Fitur Utama
+Admin     | Manajemen status/profil, edit appointment, kelola pembayaran
+Dokter	  | Kelola pasien, buat/edit appointment, input hasil diagnosis dan treatment
+Pasien	  | Lihat daftar dokter, booking appointment
 
 Cara Menjalankan Aplikasi = 
 1. Clone Github di IntellIJ IDEA
